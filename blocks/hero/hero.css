@@ -45,3 +45,156 @@
     padding: 40px 32px;
   }
 }
+
+.hero.hero4 {
+  position: relative;
+  width: 100vw;
+  min-height: 840px;
+  height: 78vh;
+  max-height: 1080px;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background image as bottom layer */
+.hero.hero4 > div:first-child {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  display: block;
+}
+
+.hero.hero4 picture,
+.hero.hero4 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+}
+
+/* Overlay for text readability */
+.hero.hero4::after {
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 34%);
+  z-index: 2;
+  border-radius: 20px;
+  display: block;
+  pointer-events: none;
+}
+
+/* Content block: higher (less top margin), wider, centered as in the reference */
+.hero.hero4 > div:last-child {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+}
+
+.hero.hero4 > div:last-child > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 500px;
+  margin-left: 1vw;
+  margin-top: 24px;
+  padding: 0;
+  gap: 10px;
+}
+
+/* Headline: slightly larger, more airy */
+.hero.hero4 h1 {
+  font-family: Orbitron, Montserrat, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 4.2rem;
+  line-height: 1.17;
+  color: #fff;
+  margin: 0 0 8px;
+  letter-spacing: 0.01em;
+  max-width: 100%;
+  text-align: left;
+  overflow-wrap: break-word;
+}
+
+/* Paragraph: wider, less vertical margin */
+.hero.hero4 p {
+  color: rgb(255 255 255 / 93%);
+  font-size: 1.13rem;
+  line-height: 1.45;
+  max-width: 480px;
+  margin: 0 0 4px;
+  text-align: left;
+  background: none;
+}
+
+/* Button: grouped closer to paragraph, visually cohesive */
+.hero.hero4 .button-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0;
+  margin-top: 2px;
+}
+
+.hero.hero4 a.button {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: 2.4em;
+  font-size: 1.08rem;
+  font-weight: 500;
+  padding: 0.6em 2.1em;
+  margin: 0;
+  box-shadow: none;
+  text-align: center;
+  line-height: 1.25;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+/* Remove unwanted elements */
+.hero.hero4 ul,
+.hero.hero4 nav,
+.hero.hero4 [class*="menu"],
+.hero.hero4 [class*="nav"],
+.hero.hero4 [class*="sidebar"],
+.hero.hero4 button {
+  display: none;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (width <= 900px) {
+  .hero.hero4 {
+    min-height: 420px;
+    border-radius: 12px;
+  }
+
+  .hero.hero4 > div:last-child > div {
+    margin-left: 1vw;
+    margin-top: 12px;
+    max-width: 97vw;
+    gap: 6px;
+  }
+
+  .hero.hero4 h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero.hero4 p {
+    font-size: 0.97rem;
+    max-width: 96vw;
+  }
+}
