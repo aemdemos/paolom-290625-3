@@ -1,3 +1,4 @@
+/* General Structure */
 .columns > div {
   display: flex;
   flex-direction: column;
@@ -29,5 +30,172 @@
   .columns > div > div {
     flex: 1;
     order: unset;
+  }
+}
+
+.columns.columns1 {
+  background: #000;
+  color: #fff;
+  border-bottom: 1px solid #222;
+  padding: 0;
+  font-family: var(--body-font-family);
+}
+
+.columns.columns1 > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 38px 0 28px;
+  gap: 80px;
+  min-height: 220px;
+}
+
+/* --- FIRST COLUMN (Logo + Socials), vertical centering --- */
+.columns.columns1 > div > div:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  flex: 2.5 1 0;
+  min-width: 410px;
+  height: 100%;
+}
+
+/* Make sure the .button-container sits at the vertical center */
+.columns.columns1 .button-container {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: baseline;
+  gap: 18px;
+  margin: 0;
+  width: 100%;
+  min-height: 0;
+}
+
+.columns.columns1 .button-container .button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-family: var(--body-font-family);
+  min-width: 0;
+  line-height: 1.25;
+}
+
+/* Social links: row, no wrap, extra space between */
+.columns.columns1 ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.columns.columns1 li {
+  margin-bottom: 13px;
+  padding: 0;
+}
+
+.columns.columns1 a {
+  color: #fff;
+  font-size: 14px;
+  font-family: var(--body-font-family);
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.2s;
+  line-height: 1.6;
+}
+
+.columns.columns1 a:hover {
+  color: #bbb;
+  text-decoration: underline;
+}
+
+.columns.columns1 > div > div:first-child ul {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 36px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  align-items: baseline;
+}
+
+.columns.columns1 > div > div:first-child ul li {
+  margin: 0;
+  padding: 0;
+}
+
+.columns.columns1 > div > div:first-child ul a {
+  color: #bbb;
+  font-size: 16px;
+  padding: 0;
+  background: none;
+  font-family: var(--body-font-family);
+  white-space: nowrap;
+  line-height: 1.25;
+}
+
+.columns.columns1 > div > div:first-child ul a:hover {
+  color: #fff;
+}
+
+.columns.columns1 > div > div:not(:first-child) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 170px;
+  flex: 1 1 0;
+  justify-content: flex-start;
+}
+
+.columns.columns1 h2 {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #555;
+  letter-spacing: 2px;
+  font-family: var(--body-font-family);
+  font-weight: 400;
+  margin: 0 0 16px;
+  line-height: 1.2;
+}
+
+.columns.columns1 > div > div:not(:first-child) ul {
+  margin-top: 0;
+}
+
+@media (width <= 900px) {
+  .columns.columns1 > div {
+    flex-direction: column;
+    gap: 32px;
+    padding: 32px 0 20px;
+    min-height: 0;
+  }
+
+  .columns.columns1 > div > div,
+  .columns.columns1 > div > div:first-child {
+    min-width: 0;
+    width: 100%;
+    height: auto;
+    justify-content: flex-start;
+  }
+
+  .columns.columns1 .button-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 12px;
+  }
+
+  .columns.columns1 > div > div:first-child ul {
+    gap: 22px;
   }
 }
