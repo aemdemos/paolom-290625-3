@@ -1,4 +1,10 @@
+/* General container adjustments */
 .hero-container .hero-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero-container > .hero-wrapper {
   max-width: unset;
   padding: 0;
 }
@@ -46,6 +52,114 @@
   }
 }
 
+/* --- HERO 8 --- */
+.hero.hero8 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  padding: 48px 0 40px;
+  box-sizing: border-box;
+  gap: 32px;
+}
+
+.hero.hero8 > div:first-child {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  min-height: 0;
+}
+
+.hero.hero8 > div:first-child > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  min-height: 0;
+}
+
+.hero.hero8 > div:first-child > div > picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+}
+
+.hero.hero8 > div:first-child > div > picture > img {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  min-width: 320px;
+  min-height: 260px;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  margin: 0 auto;
+  box-shadow: none;
+  background: none;
+}
+
+.hero.hero8 > div:last-child > div > h3 {
+  color: #000;
+  font-family: Orbitron, Syncopate, Arial Rounded MT Bold, Arial, sans-serif;
+  font-size: 2.8rem;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0 0 24px;
+  padding: 0;
+  width: 100%;
+  max-width: 800px;
+  align-self: center;
+  background: transparent;
+  overflow-wrap: break-word;
+  white-space: pre-line;
+}
+
+.hero.hero8 > div,
+.hero.hero8 > div > div {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  box-sizing: border-box;
+  min-height: 0;
+}
+
+@media (width <= 900px) {
+  .hero.hero8 {
+    padding: 32px 0 24px;
+    gap: 18px;
+  }
+
+  .hero.hero8 > div:last-child > div > h3 {
+    font-size: 1.4rem;
+    max-width: 94vw;
+    margin-bottom: 14px;
+  }
+
+  .hero.hero8 > div:first-child > div > picture > img {
+    max-width: 98vw;
+    min-width: 180px;
+    min-height: 120px;
+    border-radius: 12px;
+  }
+}
+
+/* --- HERO 7 --- */
 .hero.hero7 {
   position: relative;
   width: 100vw;
@@ -98,7 +212,6 @@
   box-sizing: border-box;
 }
 
-/* --- Subtle overlay for readability --- */
 .hero.hero7::before {
   position: absolute;
   inset: 0;
@@ -110,7 +223,6 @@
   pointer-events: none;
 }
 
-/* --- Overlay content centered vertically and horizontally --- */
 .hero.hero7 > div:last-child {
   position: absolute;
   inset: 0;
@@ -137,7 +249,6 @@
   padding: 0 2vw;
 }
 
-/* --- Headline --- */
 .hero.hero7 h1 {
   margin: 0 0 20px;
   padding: 0;
@@ -154,7 +265,6 @@
   max-width: 900px;
 }
 
-/* --- Subheading --- */
 .hero.hero7 > div:last-child p:not(:last-of-type) {
   color: #fff;
   font-size: 1.13rem;
@@ -166,7 +276,6 @@
   max-width: 760px;
 }
 
-/* --- CTA Buttons --- */
 .hero.hero7 > div:last-child p:last-of-type {
   display: flex;
   flex-direction: row;
@@ -204,7 +313,6 @@
   color: #181818;
 }
 
-/* --- Remove navigation/list/menu elements inside hero --- */
 .hero.hero7 nav,
 .hero.hero7 ul,
 .hero.hero7 .sidebar,
@@ -216,7 +324,6 @@
   pointer-events: none;
 }
 
-/* --- Responsive --- */
 @media (width <= 900px) {
   .hero.hero7 > div:first-child,
   .hero.hero7 > div:first-child > p {
@@ -252,162 +359,4 @@
     font-size: 0.97rem;
     padding: 10px 16px;
   }
-}
-
-.hero.hero4 {
-  position: relative;
-  width: 100vw;
-  min-height: 840px;
-  height: 78vh;
-  max-height: 1080px;
-  border-radius: 20px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Background image as bottom layer */
-.hero.hero4 > div:first-child {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  pointer-events: none;
-  display: block;
-}
-
-.hero.hero4 picture,
-.hero.hero4 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  border-radius: 20px;
-}
-
-/* Overlay for text readability */
-.hero.hero4::after {
-  position: absolute;
-  inset: 0;
-  background: rgb(0 0 0 / 34%);
-  z-index: 2;
-  border-radius: 20px;
-  display: block;
-  pointer-events: none;
-}
-
-/* Content block: higher (less top margin), wider, centered as in the reference */
-.hero.hero4 > div:last-child {
-  position: relative;
-  z-index: 3;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  width: 100%;
-  height: 100%;
-}
-
-.hero.hero4 > div:last-child > div {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  max-width: 500px;
-  margin-left: 1vw;
-  margin-top: 24px;
-  padding: 0;
-  gap: 10px;
-}
-
-/* Headline: slightly larger, more airy */
-.hero.hero4 h1 {
-  font-family: Orbitron, Montserrat, Arial, sans-serif;
-  font-weight: 300;
-  font-size: 4.2rem;
-  line-height: 1.17;
-  color: #fff;
-  margin: 0 0 8px;
-  letter-spacing: 0.01em;
-  max-width: 100%;
-  text-align: left;
-  overflow-wrap: anywhere;
-}
-
-.hero.hero4 p {
-  color: rgb(255 255 255 / 93%);
-  font-size: 1.13rem;
-  line-height: 1.45;
-  max-width: 480px;
-  margin: 0 0 4px;
-  text-align: left;
-  background: none;
-}
-
-/* Button: grouped closer to paragraph, visually cohesive */
-.hero.hero4 .button-container {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  margin: 0;
-  margin-top: 2px;
-}
-
-.hero.hero4 a.button {
-  background: transparent;
-  border: 2px solid #fff;
-  color: #fff;
-  border-radius: 2.4em;
-  font-size: 1.08rem;
-  font-weight: 500;
-  padding: 0.6em 2.1em;
-  margin: 0;
-  box-shadow: none;
-  text-align: center;
-  line-height: 1.25;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
-}
-
-/* Remove unwanted elements */
-.hero.hero4 ul,
-.hero.hero4 nav,
-.hero.hero4 [class*="menu"],
-.hero.hero4 [class*="nav"],
-.hero.hero4 [class*="sidebar"],
-.hero.hero4 button {
-  display: none;
-}
-
-/* Responsive adjustments for smaller screens */
-@media (width <= 900px) {
-  .hero.hero4 {
-    min-height: 420px;
-    border-radius: 12px;
-  }
-
-  .hero.hero4 > div:last-child > div {
-    margin-left: 1vw;
-    margin-top: 12px;
-    max-width: 97vw;
-    gap: 6px;
-  }
-
-  .hero.hero4 h1 {
-    font-size: 2.1rem;
-  }
-
-  .hero.hero4 p {
-    font-size: 0.97rem;
-    max-width: 96vw;
-  }
-}
-
-/* --- Hero full width fix --- */
-.hero-container > .hero-wrapper {
-  max-width: unset;
-  padding: 0;
 }
